@@ -9,7 +9,6 @@ namespace API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IApplicationServiceUser _applicationServiceUser;
@@ -20,12 +19,14 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<string>> Get()
         {
             return Ok(_applicationServiceUser.GetAll());
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<string> Get(int id)
         {
             return Ok(_applicationServiceUser.GetById(id));
@@ -50,6 +51,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         public ActionResult Put([FromBody] UserDTO userDTO)
         {
             try
@@ -68,6 +70,7 @@ namespace API.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
         public ActionResult Remove([FromBody] UserDTO userDTO)
         {
             try
@@ -84,52 +87,5 @@ namespace API.Controllers
                 throw;
             }
         }
-
-        // execution time
-        [HttpGet]
-        [Route("erasedList")]
-        public ActionResult<IEnumerable<string>> GetAllErased()
-        {
-            return Ok(_applicationServiceUser.GetAllErased());
-        }
-
-        [HttpPut]
-        [Route("deactivate")]
-        public ActionResult Erase([FromBody] UserDTO userDTO)
-        {
-            try
-            {
-                if (userDTO == null)
-                    return NotFound();
-
-                _applicationServiceUser.Deactivate(userDTO);
-                return Ok();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        [HttpPut]
-        [Route("deactivateList")]
-        public ActionResult RemoveList([FromBody] IEnumerable<UserDTO> userDTOs)
-        {
-            try
-            {
-                if (userDTOs == null)
-                    return NotFound();
-
-                _applicationServiceUser.DeactivateList(userDTOs);
-                return Ok();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
     }
 }

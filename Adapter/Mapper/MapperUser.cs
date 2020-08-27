@@ -19,10 +19,7 @@ namespace Adapter.Mapper
                 LastUpdate = item.LastUpdate,
 
                 Name = item.Name,
-                Sirname = item.Sirname,
-                Photo = item.Photo,
                 Email = item.Email,
-                PhoneNumber = item.PhoneNumber,
                 Username = item.Username,
                 Password = item.Password,
                 AccessRole = item.AccessRole,
@@ -44,10 +41,7 @@ namespace Adapter.Mapper
                     LastUpdate = item.LastUpdate,
 
                     Name = item.Name,
-                    Sirname = item.Sirname,
-                    Photo = item.Photo,
                     Email = item.Email,
-                    PhoneNumber = item.PhoneNumber,
                     Username = item.Username,
                     Password = item.Password,
                     AccessRole = item.AccessRole,
@@ -70,10 +64,7 @@ namespace Adapter.Mapper
                 LastUpdate = item.LastUpdate,
 
                 Name = item.Name,
-                Sirname = item.Sirname,
-                Photo = item.Photo,
                 Email = item.Email,
-                PhoneNumber = item.PhoneNumber,
                 Username = item.Username,
                 Password = item.Password,
                 AccessRole = item.AccessRole,

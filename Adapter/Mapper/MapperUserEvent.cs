@@ -33,7 +33,6 @@ namespace Adapter.Mapper
                     {
                         Id = item.User.Id,
                         Name = item.User.Name,
-                        Sirname = item.User.Sirname,
                         Email = item.User.Email,
                         StatusEvent = item.User.StatusEvent                       
                     },

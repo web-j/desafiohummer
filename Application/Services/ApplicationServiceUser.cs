@@ -85,51 +85,5 @@ namespace Application.Services
 
             return _mapperUser.MapperToDTO(user);
         }
-
-        public IEnumerable<UserDTO> GetAllErased()
-        {
-            var obj = _serviceUser.GetAll();
-
-            var deleted = obj.Where(a => a.Erased == EStatusErased.DELETED);
-
-            return _mapperUser.MapperToList(deleted);
-        }
-
-        public void DeactivateList(IEnumerable<UserDTO> obj)
-        {
-            var list = obj;
-
-            foreach (var i in list)
-            {
-                var objUser = _mapperUser.MapperToEntity(i);
-
-                if (objUser.Erased == EStatusErased.NOT_DELETED)
-                {
-                    objUser.Erased = EStatusErased.DELETED;
-                }
-                else
-                {
-                    objUser.Erased = EStatusErased.NOT_DELETED;
-                }
-
-                _serviceUser.Update(objUser);
-            }
-        }
-
-        public void Deactivate(UserDTO userDTO)
-        {
-            var obj = _mapperUser.MapperToEntity(userDTO);
-
-            if (obj.Erased == EStatusErased.NOT_DELETED)
-            {
-                obj.Erased = EStatusErased.DELETED;
-            }
-            else
-            {
-                obj.Erased = EStatusErased.NOT_DELETED;
-            }
-
-            _serviceUser.Update(obj);
-        }
     }
 }

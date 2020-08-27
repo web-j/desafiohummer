@@ -2,6 +2,7 @@
 {
     public enum EAccessRule
     {
-        ADMIN = 0
+        PARTICIPANT = 0,
+        ADMIN = 1
     }
 }

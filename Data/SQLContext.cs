@@ -41,10 +41,7 @@ namespace Data
                     .IsUnique();
 
                 entity.Property(e => e.Name);
-                entity.Property(e => e.Sirname);
-                entity.Property(e => e.Photo);
                 entity.Property(e => e.Email);
-                entity.Property(e => e.PhoneNumber);
                 entity.Property(e => e.Username).IsRequired();
                 entity.Property(e => e.Password).IsRequired();
                 entity.Property(e => e.AccessRole);
