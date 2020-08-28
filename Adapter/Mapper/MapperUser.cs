@@ -22,8 +22,7 @@ namespace Adapter.Mapper
                 Email = item.Email,
                 Username = item.Username,
                 Password = item.Password,
-                AccessRole = item.AccessRole,
-                StatusEvent = item.StatusEvent
+                AccessRole = item.AccessRole
             };
 
             return user;
@@ -44,8 +43,7 @@ namespace Adapter.Mapper
                     Email = item.Email,
                     Username = item.Username,
                     Password = item.Password,
-                    AccessRole = item.AccessRole,
-                    StatusEvent = item.StatusEvent
+                    AccessRole = item.AccessRole
                 };
 
                 userDTOs.Add(userDTO);
@@ -67,8 +65,7 @@ namespace Adapter.Mapper
                 Email = item.Email,
                 Username = item.Username,
                 Password = item.Password,
-                AccessRole = item.AccessRole,
-                StatusEvent = item.StatusEvent
+                AccessRole = item.AccessRole
             };
 
             return userDTO;

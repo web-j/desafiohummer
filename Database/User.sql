@@ -10,7 +10,6 @@
     [Password] NVARCHAR(50) NOT NULL, 
     [AccessRole] INT NULL, 
     [Guest] NVARCHAR(MAX) NULL, 
-    [StatusEvent] INT NULL, 
     CONSTRAINT [AK_User_Email] UNIQUE ([Email]),
-    CONSTRAINT [AK_User_Username] UNIQUE ([Username]),
+    CONSTRAINT [AK_User_Username] UNIQUE ([Username])
 )

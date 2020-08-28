@@ -33,8 +33,7 @@ namespace Adapter.Mapper
                     {
                         Id = item.User.Id,
                         Name = item.User.Name,
-                        Email = item.User.Email,
-                        StatusEvent = item.User.StatusEvent                       
+                        Email = item.User.Email
                     },
 
                     Event = new EventDTO

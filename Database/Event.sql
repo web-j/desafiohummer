@@ -5,5 +5,6 @@
     [LastUpdate] DATETIMEOFFSET NULL, 
     [Erased] INT NULL,
     [EventName] NVARCHAR(50) NULL, 
-    [EventDate] DATETIMEOFFSET NULL
+    [EventDate] DATETIMEOFFSET NULL, 
+    [StatusEvent] INT NULL
 )

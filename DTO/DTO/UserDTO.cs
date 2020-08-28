@@ -16,7 +16,6 @@ namespace DTO.DTO
         public string Username { get; set; }
         public string Password { get; set; }
         public EAccessRule AccessRole { get; set; }
-        public EStatusEvent StatusEvent { get; set; }
 
         // execution time
         public virtual ICollection<EventDTO> EventDTO { get; set; }

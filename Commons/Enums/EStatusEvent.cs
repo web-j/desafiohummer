@@ -2,8 +2,7 @@
 {
     public enum EStatusEvent
     {
-        UNDEFINED = 0,
-        OK = 1,
-        CANCELED = 2
+        IN_PROGRESS = 0,
+        CLOSED = 1
     }
 }

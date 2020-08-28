@@ -81,5 +81,38 @@ namespace API.Controllers
                 throw;
             }
         }
+
+        // execution time
+        [HttpPut]
+        [Route("closedEvent")]
+        public ActionResult ClosedEvent([FromBody] EventDTO eventDTO)
+        {
+            try
+            {
+                if (eventDTO == null)
+                    return NotFound();
+
+                _applicationServiceEvent.ClosedEvent(eventDTO);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        [HttpGet]
+        [Route("getAllEventsAvailable")]
+        public ActionResult<IEnumerable<string>> GetAllEventsAvailable()
+        {
+            return Ok(_applicationServiceEvent.GetAllEventsAvailable());
+        }
+
+        [HttpGet]
+        [Route("getAllEventsUnavailable")]
+        public ActionResult<IEnumerable<string>> GetAllEventsUnavailable()
+        {
+            return Ok(_applicationServiceEvent.GetAllEventsUnavailable());
+        }
     }
 }

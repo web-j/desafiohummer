@@ -16,5 +16,11 @@ namespace Application.Interfaces
         void Remove(EventDTO obj);
 
         void Dispose();
+
+        //execution time
+        void ClosedEvent(EventDTO obj);
+        IEnumerable<EventDTO> GetAllEventsAvailable();
+        IEnumerable<EventDTO> GetAllEventsUnavailable();
+
     }
 }

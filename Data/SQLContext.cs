@@ -45,8 +45,9 @@ namespace Data
                 entity.Property(e => e.Username).IsRequired();
                 entity.Property(e => e.Password).IsRequired();
                 entity.Property(e => e.AccessRole);
-                entity.Property(e => e.StatusEvent);
             });
+
+
 
             modelBuilder.Entity<Event>(entity =>
             {
@@ -55,7 +56,8 @@ namespace Data
                 entity.Property(e => e.Erased);
 
                 entity.Property(e => e.EventName);
-                entity.Property(e => e.EventDate);                
+                entity.Property(e => e.EventDate);
+                entity.Property(e => e.StatusEvent);
             });
 
             //many to many relationship

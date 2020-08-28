@@ -47,6 +47,8 @@ namespace API
 
             services.AddControllers().AddNewtonsoftJson();
 
+           
+
             //enable swagger
             services.AddSwaggerGen(c =>
             {

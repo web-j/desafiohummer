@@ -1,0 +1,2 @@
+﻿INSERT INTO [dbo].[User] (Name, Email, Username, Password, AccessRole, Created, LastUpdate, Erased)
+    VALUES ('Administador', 'admin@admin.com', 'admin', 'admin123', 1, '0001-01-01 00:00:00.0000000 +00:00', '0001-01-01 00:00:00.0000000 +00:00', 0);

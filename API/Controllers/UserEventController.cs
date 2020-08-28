@@ -63,7 +63,8 @@ namespace API.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpPut]
+        [Route("delete")]
         public ActionResult Remove([FromBody] UserEventDTO userEventDTO)
         {
             try

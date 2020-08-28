@@ -19,8 +19,8 @@ namespace Adapter.Mapper
                 LastUpdate = item.LastUpdate,
 
                 EventName = item.EventName,
-                EventDate = item.EventDate
-                
+                EventDate = item.EventDate,
+                StatusEvent = item.StatusEvent
             };
 
             return evento;
@@ -38,7 +38,8 @@ namespace Adapter.Mapper
                     LastUpdate = item.LastUpdate,
 
                     EventName = item.EventName,
-                    EventDate = item.EventDate                    
+                    EventDate = item.EventDate,
+                    StatusEvent = item.StatusEvent
                 };
 
                 eventDTOs.Add(eventDTO);
@@ -57,7 +58,8 @@ namespace Adapter.Mapper
                 LastUpdate = item.LastUpdate,
 
                 EventName = item.EventName,
-                EventDate = item.EventDate
+                EventDate = item.EventDate,
+                StatusEvent = item.StatusEvent
             };
 
             return eventDTO;

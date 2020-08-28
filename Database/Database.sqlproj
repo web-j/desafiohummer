@@ -64,4 +64,7 @@
     <Build Include="Event.sql" />
     <Build Include="UserEvent.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script1.sql" />
+  </ItemGroup>
 </Project>

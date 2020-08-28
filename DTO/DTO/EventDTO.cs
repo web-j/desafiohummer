@@ -1,4 +1,5 @@
-﻿using DTO.DTO.Base;
+﻿using Commons.Enums;
+using DTO.DTO.Base;
 using System;
 using System.Collections.Generic;
 
@@ -15,5 +16,6 @@ namespace DTO.DTO
 
         public string EventName { get; set; }
         public DateTimeOffset EventDate { get; set; }
+        public EStatusEvent StatusEvent { get; set; }
     }
 }
