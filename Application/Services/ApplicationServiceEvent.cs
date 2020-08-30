@@ -21,9 +21,9 @@ namespace Application.Services
 
 
         public ApplicationServiceEvent(
-            IServiceEvent serviceEvent, 
-            IMapperEvent mapperEvent, 
-            IApplicationServiceUserEvent applicationServiceUserEvent, 
+            IServiceEvent serviceEvent,
+            IMapperEvent mapperEvent,
+            IApplicationServiceUserEvent applicationServiceUserEvent,
             IApplicationServiceUser applicationServiceUser,
             IHttpContextAccessor httpContextAccessor
             )
@@ -111,8 +111,8 @@ namespace Application.Services
 
             // lista de eventos disponíveis
             var eventsInProgress = from a in events
-                                  where a.StatusEvent == EStatusEvent.IN_PROGRESS
-                                  select a.Id;
+                                   where a.StatusEvent == EStatusEvent.IN_PROGRESS
+                                   select a.Id;
 
             // lista todos os userEvents
             var userEvents = _applicationServiceUserEvent.GetAll();
@@ -149,13 +149,15 @@ namespace Application.Services
 
             var userEventsWithUserSession = from a in userEvents
                                             where a.UserId.ToString() == userSession
-                                            select a.EventId;
+                                            select a;
 
-
+            var eventUserWithGuest = from a in userEvents
+                                     where a.UserId.ToString() == userSession
+                                     select a;
 
             foreach (var i in userEventsWithUserSession.ToList())
             {
-                var eventsGet = GetById(i);
+                var eventsGet = GetById(i.EventId);
                 EventDTOs.Add(eventsGet);
             }
 

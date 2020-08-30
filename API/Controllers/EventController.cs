@@ -1,6 +1,5 @@
 ﻿using Application.Interfaces;
 using DTO.DTO;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,6 @@ namespace API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    [Authorize]
     public class EventController : ControllerBase
     {
         public readonly IApplicationServiceEvent _applicationServiceEvent;

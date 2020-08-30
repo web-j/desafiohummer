@@ -17,6 +17,5 @@ namespace Domain.Models
         public string EventName { get; set; }
         public DateTimeOffset EventDate { get; set; }
         public EStatusEvent StatusEvent { get; set; }
-
     }
 }

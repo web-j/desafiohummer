@@ -1,6 +1,9 @@
-﻿using Domain.Models;
+﻿using Commons.ValueObjects;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using Newtonsoft.Json;
+using System;
 
 namespace Data
 {
@@ -73,6 +76,16 @@ namespace Data
                 .HasOne(pt => pt.Event)
                 .WithMany(t => t.UserEvent)
                 .HasForeignKey(pt => pt.EventId);
+
+            modelBuilder.Entity<UserEvent>(entity =>
+            {
+                entity.Property(e => e.Guest).HasConversion(
+                    v => JsonConvert.SerializeObject(v),
+                    v => JsonConvert.DeserializeObject<Guest>(v));
+
+                entity.Property(e => e.GuestDrink);
+                entity.Property(e => e.ParticipantDrink);
+            });
 
             OnModelCreatingPartial(modelBuilder);
         }

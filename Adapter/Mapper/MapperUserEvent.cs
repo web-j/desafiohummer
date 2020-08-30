@@ -14,7 +14,10 @@ namespace Adapter.Mapper
             UserEvent userEvent = new UserEvent
             {
                 EventId = item.EventId,
-                UserId = item.UserId
+                UserId = item.UserId,
+                Guest = item.Guest,
+                GuestDrink = item.GuestDrink,
+                ParticipantDrink = item.ParticipantDrink
             };
 
             return userEvent;
@@ -41,7 +44,11 @@ namespace Adapter.Mapper
                         Id = item.Event.Id,
                         EventName = item.Event.EventName,
                         EventDate = item.Event.EventDate
-                    }
+                    },
+
+                    Guest = item.Guest,
+                    GuestDrink = item.GuestDrink,
+                    ParticipantDrink = item.ParticipantDrink
                 };
 
                 userEventDTOs.Add(userEventDTO);
@@ -65,7 +72,11 @@ namespace Adapter.Mapper
                 Event = new EventDTO
                 {
                     Id = item.Event.Id
-                }
+                },
+
+                Guest = item.Guest,
+                GuestDrink = item.GuestDrink,
+                ParticipantDrink = item.ParticipantDrink
             };
 
             return userEventDTO;
