@@ -11,7 +11,7 @@ namespace DTO.DTO
         public virtual EventDTO Event { get; set; }
 
         public Guest Guest { get; set; }
-        public bool? GuestDrink { get; set; }
-        public bool? ParticipantDrink { get; set; }
+        public bool GuestDrink { get; set; }
+        public bool ParticipantDrink { get; set; }
     }
 }

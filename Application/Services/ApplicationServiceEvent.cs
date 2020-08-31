@@ -4,6 +4,7 @@ using Commons.Enums;
 using Core.Interfaces.Services;
 using DTO.DTO;
 using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -40,14 +41,18 @@ namespace Application.Services
         public IEnumerable<EventDTO> GetAll()
         {
             var obj = _serviceEvent.GetAll();
+            var objMapped = _mapperEvent.MapperToList(obj);
 
-            var not_deleted = obj.Where(a => a.Erased == EStatusErased.NOT_DELETED);
-
-            return _mapperEvent.MapperToList(not_deleted);
+            return objMapped;
         }
 
         public EventDTO GetById(int id)
         {
+            //List<float> Spent = new List<float>();
+            List<float> SpentDrink = new List<float>();
+            List<float> SpentFood = new List<float>();
+            //List<float> SpentCollected = new List<float>();
+
             var obj = _serviceEvent.GetById(id);
             var evento = _mapperEvent.MapperToDTO(obj);
 
@@ -60,7 +65,38 @@ namespace Application.Services
             foreach (var i in listUserEventFiltered)
             {
                 evento.UserDTO.Add(i.User);
+                evento.Guest.Add(i.Guest);
+                //if (i.Guest.GuestName != null)
+                //{
+                //    evento.Guest.Add(i.Guest);
+                //}
+
+                // adiciona o valor em refeição e bebida por pessoa e por convidado
+                if (i.Guest.GuestName != null)
+                {
+                    SpentFood.Add(20);
+
+                    if (i.GuestDrink)
+                    {
+                        SpentDrink.Add(10);
+                    }
+
+                    if (i.ParticipantDrink)
+                    {
+                        SpentDrink.Add(10);
+                    }
+                }
+                else
+                {
+                    SpentFood.Add(10);
+                }
+
             }
+
+            evento.TotalSpentDrink = SumValues(SpentDrink);
+            evento.TotalSpentFood = SumValues(SpentFood);
+
+            evento.TotalSpent = evento.TotalSpentDrink + evento.TotalSpentFood;
 
             return evento;
         }
@@ -164,6 +200,10 @@ namespace Application.Services
             return EventDTOs;
         }
 
+        private float SumValues(List<float> SumValues)
+        {
+            return SumValues.Sum();
+        }
 
     }
 }
