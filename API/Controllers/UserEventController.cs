@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using Application.Interfaces;
 using DTO.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class UserEventController : ControllerBase
     {
         public readonly IApplicationServiceUserEvent _applicationServiceUserEvent;
