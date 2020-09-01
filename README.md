@@ -19,7 +19,7 @@ Configurações:
     "SqlConnectionString": "Server=SERVERNAME;Database=NAMEBD;Trusted_Connection=True"
   }
 ```
-
+* Publicar o projeto de banco de dados da pasta "Database", todas as tabelas e scripts para update do banco encontram-se lá.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
