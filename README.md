@@ -1,6 +1,6 @@
 # Desafio Hummer (Backend)
 
-Aplicativo para organização de eventos (Churrasco), feito em ASP.Net Core 3.
+Aplicativo para organização de eventos (Churrasco), feito em ASP.Net Core 3 e com o banco SQL Server.
 
 ## Instalação e Configurações
 
